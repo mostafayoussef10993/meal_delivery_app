@@ -147,3 +147,21 @@ Orders are locally confirmed — add server-side order persistence if needed.
 
 Optionally add caching for meal images and better offline support.
 
+## 📸 Screenshots
+
+### Splash & Onboarding
+<img src="assets/screenshots/1.jpg" width="250"/> <img src="assets/screenshots/2.jpg" width="250"/>
+
+### Theme & Authentication
+<img src="assets/screenshots/3.jpg" width="250"/> <img src="assets/screenshots/4.jpg" width="250"/>
+
+### Meals & Search
+<img src="assets/screenshots/5.jpg" width="250"/> <img src="assets/screenshots/6.jpg" width="250"/>
+
+### Meal Details & Cart
+<img src="assets/screenshots/7.jpg" width="250"/> <img src="assets/screenshots/8.jpg" width="250"/>
+
+### Checkout & Confirmation
+<img src="assets/screenshots/9.jpg" width="250"/>
+
+
