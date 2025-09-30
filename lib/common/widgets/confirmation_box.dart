@@ -3,14 +3,14 @@
 import 'package:flutter/material.dart';
 import 'package:musicapp/core/config/assets/app_images.dart';
 
-class DiscountBox extends StatelessWidget {
-  const DiscountBox({super.key});
+class ConfirmationBox extends StatelessWidget {
+  const ConfirmationBox({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Container(
       width: 320, // fixed width
-      height: 120, // fixed height
+      height: 320, // fixed height
       decoration: BoxDecoration(
         color: Colors.white, // optional background color
         borderRadius: BorderRadius.circular(16), // circular corners

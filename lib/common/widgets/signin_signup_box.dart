@@ -3,8 +3,8 @@
 import 'package:flutter/material.dart';
 import 'package:musicapp/core/config/assets/app_images.dart';
 
-class DiscountBox extends StatelessWidget {
-  const DiscountBox({super.key});
+class SigninSignupBox extends StatelessWidget {
+  const SigninSignupBox({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -24,7 +24,7 @@ class DiscountBox extends StatelessWidget {
       ),
       clipBehavior: Clip.hardEdge, // ensures image respects borderRadius
       child: Image.asset(
-        AppImages.discount,
+        AppImages.signuporsignin,
         fit: BoxFit.cover, // fills nicely inside
       ),
     );

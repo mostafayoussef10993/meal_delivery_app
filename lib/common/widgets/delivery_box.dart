@@ -3,14 +3,14 @@
 import 'package:flutter/material.dart';
 import 'package:musicapp/core/config/assets/app_images.dart';
 
-class DiscountBox extends StatelessWidget {
-  const DiscountBox({super.key});
+class DeliveryBox extends StatelessWidget {
+  const DeliveryBox({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Container(
       width: 320, // fixed width
-      height: 120, // fixed height
+      height: 280, // fixed height
       decoration: BoxDecoration(
         color: Colors.white, // optional background color
         borderRadius: BorderRadius.circular(16), // circular corners
@@ -24,7 +24,7 @@ class DiscountBox extends StatelessWidget {
       ),
       clipBehavior: Clip.hardEdge, // ensures image respects borderRadius
       child: Image.asset(
-        AppImages.discount,
+        AppImages.bike,
         fit: BoxFit.cover, // fills nicely inside
       ),
     );

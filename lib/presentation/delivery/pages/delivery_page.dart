@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:musicapp/common/widgets/address_field.dart';
 import 'package:musicapp/common/widgets/button/confirm_purchase_button.dart';
 import 'package:musicapp/common/widgets/card_info_fields.dart';
+import 'package:musicapp/common/widgets/delivery_box.dart';
 import 'package:musicapp/common/widgets/payment_options.dart';
 import 'package:musicapp/common/widgets/phone_field.dart';
 import 'package:musicapp/common/widgets/recipient_name_field.dart';
@@ -18,6 +19,8 @@ class DeliveryPage extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: const [
+            DeliveryBox(),
+            SizedBox(height: 24),
             RecipientNameField(),
             SizedBox(height: 12),
             PhoneField(),

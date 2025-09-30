@@ -5,11 +5,14 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:musicapp/common/widgets/appbar/app_bar.dart';
 import 'package:musicapp/common/widgets/button/basic_button_app.dart';
 import 'package:musicapp/common/widgets/button/helpers/is_dark_mode.dart';
+import 'package:musicapp/common/widgets/signin_signup_box.dart';
 import 'package:musicapp/core/config/assets/app_images.dart';
 import 'package:musicapp/core/config/assets/app_vectors.dart';
 import 'package:musicapp/core/config/theme/app_colors.dart';
 import 'package:musicapp/presentation/auth/pages/signin.dart';
 import 'package:musicapp/presentation/auth/pages/signup.dart';
+
+// Reusable signup/signin box
 
 class SignupOrSigninPage extends StatelessWidget {
   const SignupOrSigninPage({super.key});
@@ -24,7 +27,7 @@ class SignupOrSigninPage extends StatelessWidget {
           // Custom app bar
           const BasicAppBar(),
 
-          // Background patterns
+          // Decorative background patterns
           Align(
             alignment: Alignment.topRight,
             child: SvgPicture.asset(
@@ -43,7 +46,7 @@ class SignupOrSigninPage extends StatelessWidget {
             alignment: Alignment.bottomLeft,
             child: Image.asset(
               AppImages.authBG,
-              opacity: const AlwaysStoppedAnimation(0.6),
+              opacity: const AlwaysStoppedAnimation(0.5),
             ),
           ),
 
@@ -54,12 +57,16 @@ class SignupOrSigninPage extends StatelessWidget {
               padding: const EdgeInsets.symmetric(horizontal: 32, vertical: 40),
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
-                crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   // Logo
                   SvgPicture.asset(AppVectors.logo, height: 90),
 
                   const SizedBox(height: 24),
+
+                  // New Signup/Signin box
+                  const SigninSignupBox(),
+
+                  const SizedBox(height: 32),
 
                   // Title
                   Text(
@@ -67,6 +74,7 @@ class SignupOrSigninPage extends StatelessWidget {
                     style: theme.textTheme.headlineSmall?.copyWith(
                       fontWeight: FontWeight.bold,
                       color: AppColors.textPrimaryDark,
+                      letterSpacing: 0.8,
                     ),
                     textAlign: TextAlign.center,
                   ),
@@ -75,17 +83,17 @@ class SignupOrSigninPage extends StatelessWidget {
 
                   // Subtitle
                   Text(
-                    'Your one-stop shop for exclusive deals and trending products. Create an account or sign in to get started.',
+                    'Your one-stop shop for exclusive deals and trending products.\nCreate an account or sign in to get started.',
                     style: theme.textTheme.bodyMedium?.copyWith(
                       color: AppColors.textSecondaryDark,
-                      height: 1.5,
+                      height: 1.6,
                     ),
                     textAlign: TextAlign.center,
                   ),
 
                   const SizedBox(height: 40),
 
-                  // Buttons
+                  // Buttons row
                   Row(
                     children: [
                       Expanded(

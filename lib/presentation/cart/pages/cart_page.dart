@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:musicapp/common/cubits/cart_cubit.dart';
 import 'package:musicapp/common/widgets/button/remove_from_cart_button.dart';
+import 'package:musicapp/common/widgets/button/checkout_button.dart';
 import 'package:musicapp/data/models/meal/meal.dart';
 import 'package:musicapp/core/config/theme/app_colors.dart';
 import 'package:musicapp/core/config/assets/app_images.dart';
@@ -139,6 +140,14 @@ class CartPage extends StatelessWidget {
             ),
           );
         },
+      ),
+
+      // ✅ Bottom Checkout Button
+      bottomNavigationBar: SafeArea(
+        child: Padding(
+          padding: const EdgeInsets.all(16.0),
+          child: Row(children: [Expanded(child: CheckoutButton())]),
+        ),
       ),
     );
   }
