@@ -4,7 +4,6 @@
 import 'package:flutter/material.dart';
 import 'package:musicapp/presentation/cart/pages/cart_page.dart';
 import 'package:musicapp/presentation/profile/pages/profile.dart';
-import 'package:musicapp/presentation/whishlist/pages/wishlist_page.dart';
 import 'package:musicapp/core/config/theme/app_colors.dart';
 
 class CustomBottomBar extends StatelessWidget {
@@ -52,19 +51,6 @@ class CustomBottomBar extends StatelessWidget {
               Navigator.push(
                 context,
                 MaterialPageRoute(builder: (_) => CartPage()),
-              );
-            },
-          ),
-
-          // 🔹 Wishlist Button
-          _BottomBarItem(
-            icon: Icons.favorite,
-            iconColor: AppColors.primary,
-            backgroundColor: Colors.transparent,
-            onTap: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (_) => WishlistPage()),
               );
             },
           ),

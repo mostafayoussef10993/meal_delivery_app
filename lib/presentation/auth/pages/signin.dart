@@ -6,7 +6,7 @@ import 'package:musicapp/common/widgets/button/helpers/is_dark_mode.dart';
 import 'package:musicapp/core/config/assets/app_vectors.dart';
 import 'package:musicapp/data/models/auth/signin_user_req.dart';
 import 'package:musicapp/domain/usecases/auth/signin.dart';
-import 'package:musicapp/presentation/products/pages/product_list_page.dart';
+import 'package:musicapp/presentation/meal/pages/meal_list_page.dart';
 import 'package:musicapp/service_locator.dart';
 
 class SigninPage extends StatelessWidget {
@@ -50,7 +50,7 @@ class SigninPage extends StatelessWidget {
                     Navigator.pushReplacement(
                       context,
                       MaterialPageRoute(
-                        builder: (BuildContext context) => ProductListPage(),
+                        builder: (BuildContext context) => MealListPage(),
                       ),
                     );
                   },
@@ -110,7 +110,7 @@ class SigninPage extends StatelessWidget {
               Navigator.push(
                 context,
                 MaterialPageRoute(
-                  builder: (BuildContext context) => ProductListPage(),
+                  builder: (BuildContext context) => MealListPage(),
                 ),
               );
             },

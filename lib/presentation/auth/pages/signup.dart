@@ -7,7 +7,7 @@ import 'package:musicapp/core/config/assets/app_vectors.dart';
 import 'package:musicapp/data/models/auth/create_user_req.dart';
 import 'package:musicapp/domain/usecases/auth/signup.dart';
 import 'package:musicapp/presentation/auth/pages/signin.dart';
-import 'package:musicapp/presentation/products/pages/product_list_page.dart';
+import 'package:musicapp/presentation/meal/pages/meal_list_page.dart';
 import 'package:musicapp/service_locator.dart';
 
 class SignupPage extends StatelessWidget {
@@ -56,7 +56,7 @@ class SignupPage extends StatelessWidget {
                     Navigator.pushReplacement(
                       context,
                       MaterialPageRoute(
-                        builder: (BuildContext context) => ProductListPage(),
+                        builder: (BuildContext context) => MealListPage(),
                       ),
                     );
                   },

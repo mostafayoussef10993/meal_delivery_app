@@ -1,34 +1,37 @@
 import 'package:hydrated_bloc/hydrated_bloc.dart';
-import 'package:musicapp/data/models/product/product.dart';
+import 'package:musicapp/data/models/meal/meal.dart';
 
-class CartCubit extends HydratedCubit<List<Product>> {
+class CartCubit extends HydratedCubit<List<Meal>> {
   CartCubit() : super([]);
 
-  void addToCart(Product p) {
-    final copy = List<Product>.from(state);
-    final exists = copy.indexWhere((e) => e.id == p.id);
-    if (exists >= 0) return;
-    copy.add(p);
+  // 🛒 Add meal to cart
+  void addToCart(Meal meal) {
+    final copy = List<Meal>.from(state);
+    final exists = copy.indexWhere((e) => e.id == meal.id);
+    if (exists >= 0) return; // ✅ avoid duplicates
+    copy.add(meal);
     emit(copy);
   }
 
-  void removeFromCart(int productId) {
-    // خلي الاسم consistent
-    emit(state.where((e) => e.id != productId).toList());
+  // ❌ Remove meal from cart
+  void removeFromCart(String mealId) {
+    emit(state.where((e) => e.id != mealId).toList());
   }
 
+  // 🧹 Clear cart
   void clearCart() => emit([]);
 
+  // ♻️ Hydrated persistence
   @override
-  List<Product>? fromJson(Map<String, dynamic> json) {
+  List<Meal>? fromJson(Map<String, dynamic> json) {
     final arr = (json['cart'] as List)
-        .map((e) => Product.fromMap(Map<String, dynamic>.from(e)))
+        .map((e) => Meal.fromMap(Map<String, dynamic>.from(e)))
         .toList();
-    return List<Product>.from(arr);
+    return List<Meal>.from(arr);
   }
 
   @override
-  Map<String, dynamic>? toJson(List<Product> state) => {
+  Map<String, dynamic>? toJson(List<Meal> state) => {
     'cart': state.map((e) => e.toMap()).toList(),
   };
 }

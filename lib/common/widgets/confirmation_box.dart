@@ -24,7 +24,7 @@ class DiscountBox extends StatelessWidget {
       ),
       clipBehavior: Clip.hardEdge, // ensures image respects borderRadius
       child: Image.asset(
-        AppImages.discount,
+        AppImages.confirmation,
         fit: BoxFit.cover, // fills nicely inside
       ),
     );

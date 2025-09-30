@@ -64,9 +64,9 @@ class GetStarted extends StatelessWidget {
 
                   // Headline
                   Text(
-                    'Shop Smarter, Live Better',
+                    'Delicious Food, Delivered To You',
                     style: theme.textTheme.headlineLarge?.copyWith(
-                      color: AppColors.textPrimaryDark, // adaptive
+                      color: Colors.red, // adaptive
                       fontWeight: FontWeight.bold,
                       letterSpacing: 1,
                     ),
@@ -77,9 +77,9 @@ class GetStarted extends StatelessWidget {
 
                   // Subtitle
                   Text(
-                    'Discover exclusive deals, explore trending products, and enjoy a seamless shopping experience all in one place.',
+                    ' Meals delivered to your door - fast, fresh, and hassle-free.',
                     style: theme.textTheme.bodyMedium?.copyWith(
-                      color: AppColors.textPrimaryDark, // adaptive
+                      color: Colors.black, // adaptive
                       height: 1.5,
                     ),
                     textAlign: TextAlign.center,
@@ -100,7 +100,7 @@ class GetStarted extends StatelessWidget {
                           ),
                         );
                       },
-                      title: 'Start Shopping',
+                      title: 'Fast Food At Your Doorstep',
                     ),
                   ),
 

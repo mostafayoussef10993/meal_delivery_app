@@ -4,8 +4,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:musicapp/common/cubits/cart_cubit.dart';
 import 'package:musicapp/common/widgets/button/remove_from_cart_button.dart';
-import 'package:musicapp/data/models/product/product.dart';
+import 'package:musicapp/data/models/meal/meal.dart';
 import 'package:musicapp/core/config/theme/app_colors.dart';
+import 'package:musicapp/core/config/assets/app_images.dart';
 
 class CartPage extends StatelessWidget {
   const CartPage({super.key});
@@ -20,7 +21,7 @@ class CartPage extends StatelessWidget {
         backgroundColor: AppColors.primary,
         foregroundColor: Colors.white,
       ),
-      body: BlocBuilder<CartCubit, List<Product>>(
+      body: BlocBuilder<CartCubit, List<Meal>>(
         builder: (context, cartItems) {
           if (cartItems.isEmpty) {
             return Center(
@@ -50,7 +51,7 @@ class CartPage extends StatelessWidget {
                   itemCount: cartItems.length,
                   separatorBuilder: (_, __) => const SizedBox(height: 12),
                   itemBuilder: (context, index) {
-                    final product = cartItems[index];
+                    final meal = cartItems[index];
                     return Card(
                       elevation: 2,
                       shape: RoundedRectangleBorder(
@@ -63,10 +64,18 @@ class CartPage extends StatelessWidget {
                             ClipRRect(
                               borderRadius: BorderRadius.circular(8),
                               child: Image.network(
-                                product.thumbnail,
+                                meal.image,
                                 width: 64,
                                 height: 64,
                                 fit: BoxFit.cover,
+                                errorBuilder: (context, error, stackTrace) {
+                                  return Image.asset(
+                                    AppImages.noImg,
+                                    width: 64,
+                                    height: 64,
+                                    fit: BoxFit.cover,
+                                  );
+                                },
                               ),
                             ),
                             const SizedBox(width: 12),
@@ -75,7 +84,7 @@ class CartPage extends StatelessWidget {
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
                                   Text(
-                                    product.title,
+                                    meal.name,
                                     style: theme.textTheme.bodyLarge?.copyWith(
                                       fontWeight: FontWeight.bold,
                                       color: AppColors.textPrimaryLight,
@@ -85,7 +94,7 @@ class CartPage extends StatelessWidget {
                                   ),
                                   const SizedBox(height: 4),
                                   Text(
-                                    "\$${product.price.toStringAsFixed(2)}",
+                                    "\$${meal.price.toStringAsFixed(2)}",
                                     style: theme.textTheme.bodyMedium?.copyWith(
                                       color: AppColors.primary,
                                       fontWeight: FontWeight.w600,
@@ -94,7 +103,7 @@ class CartPage extends StatelessWidget {
                                 ],
                               ),
                             ),
-                            RemoveFromCartButton(productId: product.id),
+                            RemoveFromCartButton(mealId: meal.id),
                           ],
                         ),
                       ),

@@ -6,4 +6,7 @@ class AppImages {
   static const String authBG = "${basePath}auth_bg.png";
   static const String noImg = "${basePath}no_img.png";
   static const String discount = "${basePath}discount_img.jpg";
+  static const String bike = "${basePath}bike.jpg";
+  static const String confirmation = "${basePath}confirmation.jpg";
+  static const String signuporsignin = "${basePath}signin_signup.jpg";
 }

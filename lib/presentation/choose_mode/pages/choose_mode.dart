@@ -68,7 +68,7 @@ class ChooseModePage extends StatelessWidget {
                   Text(
                     'Choose Your Style',
                     style: theme.textTheme.headlineLarge?.copyWith(
-                      color: AppColors.textPrimaryDark,
+                      color: Colors.black,
                       fontWeight: FontWeight.bold,
                     ),
                     textAlign: TextAlign.center,
@@ -80,7 +80,7 @@ class ChooseModePage extends StatelessWidget {
                   Text(
                     'Switch between Light and Dark mode to personalize your shopping experience.',
                     style: theme.textTheme.bodyMedium?.copyWith(
-                      color: AppColors.textSecondaryDark,
+                      color: Colors.black,
                       height: 1.5,
                     ),
                     textAlign: TextAlign.center,

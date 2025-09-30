@@ -6,16 +6,18 @@ import 'package:hydrated_bloc/hydrated_bloc.dart';
 import 'package:musicapp/core/config/theme/app_theme.dart';
 import 'package:musicapp/firebase_options.dart';
 import 'package:musicapp/presentation/choose_mode/bloc/theme_cubit.dart';
-import 'package:musicapp/presentation/products/bloc/product_bloc.dart';
+import 'package:musicapp/presentation/delivery/bloc/delivery_cubit.dart';
 import 'package:musicapp/presentation/splash/pages/splash.dart';
 import 'package:musicapp/service_locator.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
+
 import 'common/cubits/cart_cubit.dart';
-import 'common/cubits/wishlist_cubit.dart';
+import 'presentation/meal/bloc/meal_bloc.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
+
   HydratedBloc.storage = await HydratedStorage.build(
     storageDirectory: kIsWeb
         ? HydratedStorageDirectory.web
@@ -33,6 +35,7 @@ Future<void> main() async {
   );
 
   await initializeDependencies();
+
   runApp(const MyApp());
 }
 
@@ -49,9 +52,9 @@ class _MyAppState extends State<MyApp> {
     return MultiBlocProvider(
       providers: [
         BlocProvider(create: (_) => ThemeCubit()),
-        BlocProvider(create: (_) => sl<ProductBloc>()),
+        BlocProvider(create: (_) => sl<MealBloc>()),
         BlocProvider(create: (_) => sl<CartCubit>()),
-        BlocProvider(create: (_) => sl<WishlistCubit>()),
+        BlocProvider(create: (_) => sl<DeliveryCubit>()),
       ],
       child: BlocBuilder<ThemeCubit, ThemeMode>(
         builder: (context, mode) => MaterialApp(
@@ -59,7 +62,7 @@ class _MyAppState extends State<MyApp> {
           darkTheme: AppTheme.darkTheme,
           themeMode: mode,
           debugShowCheckedModeBanner: false,
-          home: SplashPage(), // بعد الـ Splash يروح على Login/Products
+          home: const SplashPage(), // بعد الـ Splash يروح على Login/Products
         ),
       ),
     );
